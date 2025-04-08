@@ -19,5 +19,3 @@ for filename in tqdm(json_files, desc="Processing files"):
     output_filepath = os.path.join(output_dir, filename)
     with open(output_filepath, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-
-print(f"Processed JSON files have been saved to '{output_dir}' directory.")

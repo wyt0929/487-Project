@@ -22,7 +22,6 @@ class LSTMModel(nn.Module):
     
     def train(self, epochs, train_loader):
         for epoch in range(epochs):
-            print(epoch)
             for _, (inputs, targets) in enumerate(tqdm(train_loader, desc='Training', leave=False)):
                 self.optimizer.zero_grad()
                 outputs = self.forward(inputs)
@@ -63,7 +62,6 @@ class BertClassifier(nn.Module):
     
     def train(self, epochs, train_loader):
         for epoch in range(epochs):
-            print(epoch)
             for _, (inputs, targets) in enumerate(tqdm(train_loader, desc='Training', leave=False)):
                 self.optimizer.zero_grad()
                 outputs = self.forward(inputs)

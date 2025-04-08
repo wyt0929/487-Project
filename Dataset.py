@@ -12,8 +12,6 @@ class LSTMDataset(Dataset):
         self.labels = []
         self.vectorizer = gensim.downloader.load('glove-wiki-gigaword-200')
         for i, row in tsv.iterrows():
-            if i%100 == 0:
-                print(i)
             ID = row['ID']
             self.labels.append(row['bias'])
             path = os.path.join("processed_jsons",f"{ID}.json")
@@ -40,8 +38,6 @@ class BERTDataset(Dataset):
         self.vectorizer = BertTokenizer.from_pretrained('bert-base-uncased')
         self.bert = BertModel.from_pretrained('bert-base-uncased')
         for i, row in tsv.iterrows():
-            if i%100 == 0:
-                print(i)
             ID = row['ID']
             self.labels.append(row['bias'])
             path = os.path.join("processed_jsons",f"{ID}.json")
@@ -65,8 +61,6 @@ class SVMDataset(Dataset):
         self.labels = []
         self.vectorizer = gensim.downloader.load('glove-wiki-gigaword-200')
         for i, row in tsv.iterrows():
-            if i%100 == 0:
-                print(i)
             ID = row['ID']
             self.labels.append(row['bias'])
             path = os.path.join("processed_jsons",f"{ID}.json")
